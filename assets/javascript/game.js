@@ -2,3 +2,10 @@
 //random number should be between 19-120
 
 console.log("Yo!")
+
+$(document).ready(function() {
+
+    
+
+
+});
