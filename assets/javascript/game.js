@@ -3,7 +3,7 @@
 
 console.log("Yo!")
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     var crystal = $(".crystal");
     var ruby = $("#ruby");
@@ -14,47 +14,84 @@ $(document).ready(function() {
     var randomSapphire = Math.floor((Math.random() * 12) + 1);
     var randomGold = Math.floor((Math.random() * 12) + 1);
     var randomEmerald = Math.floor((Math.random() * 12) + 1);
-    var currentNumber = 0
+    var currentNumber = 0;
+    var randomNumber = 19 + Math.floor(Math.random() * 120);
+    var wins = 0;
+    var losses = 0;
 
-    $("#randomNumber").html(function() {
 
+    $("#randomNumber").html(function () {
 
-        var randomNumber = 19 + Math.floor(Math.random() * 120);
-
-        $("#randomNumber").text(randomNumber)
+        $("#randomNumber").text(randomNumber);
     });
 
+    function checkWin(){
+        if (currentNumber === randomNumber) {
+            $("#wins").text(++wins);
+            $("#currentNumber").text(0);
+            randomNumber = 19 + Math.floor(Math.random() * 120);
+            $("#randomNumber").text(randomNumber);
+            randomRuby = Math.floor((Math.random() * 12) + 1);
+            randomSapphire = Math.floor((Math.random() * 12) + 1);
+            randomGold = Math.floor((Math.random() * 12) + 1);
+            randomEmerald = Math.floor((Math.random() * 12) + 1);
+            currentNumber = 0;
+            alert("You win!");
 
-    $("#ruby").on("click", function() {
+
+        } else if (currentNumber > randomNumber) {
+            $("#losses").text(++losses);
+            $("#currentNumber").text(0);
+            randomNumber = 19 + Math.floor(Math.random() * 120);
+            $("#randomNumber").text(randomNumber);
+            randomRuby = Math.floor((Math.random() * 12) + 1);
+            randomSapphire = Math.floor((Math.random() * 12) + 1);
+            randomGold = Math.floor((Math.random() * 12) + 1);
+            randomEmerald = Math.floor((Math.random() * 12) + 1);
+            currentNumber = 0;
+            
+            alert("You lose!");
+        };
+    } 
+
+
+    $("#ruby").on("click", function () {
+
+        currentNumber += randomRuby;
+        console.log(currentNumber);
+        $("#currentNumber").text(currentNumber);
+        checkWin()
+
         
-        currentNumber += randomRuby
-        console.log(currentNumber)
-        $("#currentNumber").text(currentNumber)
-        
+
     });
 
-    $("#sapphire").on("click", function() {
-        
+    $("#sapphire").on("click", function () {
+
         currentNumber += randomSapphire
         console.log(currentNumber)
         $("#currentNumber").text(currentNumber)
-        
+        checkWin()
     });
 
-    $("#gold").on("click", function() {
-        
+    $("#gold").on("click", function () {
+
         currentNumber += randomGold
         console.log(currentNumber)
         $("#currentNumber").text(currentNumber)
-        
+
+        checkWin()
+
     });
 
-    $("#emerald").on("click", function() {
-        
+    $("#emerald").on("click", function () {
+
         currentNumber += randomEmerald
         console.log(currentNumber)
         $("#currentNumber").text(currentNumber)
-        
+
+        checkWin()
+
     });
 
 
