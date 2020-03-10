@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <title>Crystal Collectors Game!</title>
+    <title>Rupee Collector Game!</title>
 </head>
+
 <body>
-    <h1>Crystal Collector!</h1>
+    <h1>Rupee Collector!</h1>
 
-    <p>You will be given a random number at the start of the game.</p>
+    <div class="container"> <p>You will be given a random number at the start of the game.</p>
 
-    <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+        <p>There are four rupees below. By clicking on a rupee you will add a specific amount of points to your total
+            score.</p>
 
-    <p>The value of each crystal is hidden from you until you click on it.</p>
+        <p>The value of each rupee is hidden from you until you click on it.</p>
 
-    <p>Each time when the game starts, the game will change the values of each crystal.</p>
+        <p>Each time when the game starts, the game will change the values of each rupee.</p>
+    </div>
 
-    <p>Wins: <span id="wins">0</span></p>
-    <p>Losses: <span id="losses">0</span></p>
+    <div class="container-sm"> <p>Wins: <span id="wins">0</span></p>
+        <p>Losses: <span id="losses">0</span></p>
 
-    <div id="randomNumber"></div>
+    </div>
 
-    <img class="crystal" id="ruby" src="assets/images/ruby.png"> <img class="crystal" id="sapphire" src="assets/images/sapphire.png"> <img class="crystal" id="gold" src="assets/images/gold.png"> <img class="crystal" id="emerald" src="assets/images/emerald.png">
 
-    <p>Your total score is:</p>
 
-    <div id="currentNumber">0</div>
+    <div class="bolded" id="randomNumber"></div>
+
+    <img class="crystal" id="ruby" src="assets/images/ruby.png"> <img class="crystal" id="sapphire"
+        src="assets/images/sapphire.png"> <img class="crystal" id="gold" src="assets/images/gold.png"> <img
+        class="crystal" id="emerald" src="assets/images/emerald.png">
+
+    <p class="bolded">Your total score is:</p>
+
+    <div class="bolded" id="currentNumber">0</div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="assets/javascript/game.js"></script>
 </body>
+
 </html>

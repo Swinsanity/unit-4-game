@@ -2,3 +2,28 @@
     height: 150px;
     width: 150px;
 }
+
+body {
+    background-color: #1bb04c;
+}
+
+.container {
+    background-color: #38b6f1;
+    padding: 20px;
+    text-align: center;
+   
+}
+
+.container-sm {
+    background-color: #38b6f1;
+    padding: 20px;
+}
+
+h1 {
+    color: #bd70d2;
+}
+
+
+.bolded {
+    font-weight:bold
+}

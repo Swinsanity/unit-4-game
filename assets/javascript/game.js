@@ -18,6 +18,8 @@ $(document).ready(function () {
     var randomNumber = 19 + Math.floor(Math.random() * 120);
     var wins = 0;
     var losses = 0;
+    var winAudio = new Audio("assets/audio/victory.wav");
+    var loseAudio = new Audio("assets/audio/scream.wav");
 
 
     $("#randomNumber").html(function () {
@@ -36,6 +38,7 @@ $(document).ready(function () {
             randomGold = Math.floor((Math.random() * 12) + 1);
             randomEmerald = Math.floor((Math.random() * 12) + 1);
             currentNumber = 0;
+            winAudio.play();
             alert("You win!");
 
 
@@ -49,7 +52,7 @@ $(document).ready(function () {
             randomGold = Math.floor((Math.random() * 12) + 1);
             randomEmerald = Math.floor((Math.random() * 12) + 1);
             currentNumber = 0;
-            
+            loseAudio.play();
             alert("You lose!");
         };
     } 
